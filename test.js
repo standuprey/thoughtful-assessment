@@ -6,8 +6,8 @@ import {
   sort,
 } from "./sort.js";
 
-const limitDimension = MAX_NOT_BULKY_DIMENSION_CM;
-const limitMass = MAX_LIGHT_PACKAGE_MASS_KG;
+const limitDimension = MAX_NOT_BULKY_DIMENSION_CM - 1;
+const limitMass = MAX_LIGHT_PACKAGE_MASS_KG - 1;
 
 test("test with bad parameters", (t) => {
   assert.throws(() => {

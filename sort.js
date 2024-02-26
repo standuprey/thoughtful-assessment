@@ -8,13 +8,13 @@ export function sort(width, height, length, mass) {
       `width, height, length and mass should be numbers greater than 0, got width=${width}, height=${height}, length=${length}, mass=${mass}`
     );
   }
-  const isHeavy = mass > MAX_LIGHT_PACKAGE_MASS_KG;
+  const isHeavy = mass >= MAX_LIGHT_PACKAGE_MASS_KG;
   const volume = width * height * length;
   const isNotBulky =
-    volume <= MAX_NOT_BULKY_PACKAGE_VOLUME_CM2 &&
-    width <= MAX_NOT_BULKY_DIMENSION_CM &&
-    height <= MAX_NOT_BULKY_DIMENSION_CM &&
-    length <= MAX_NOT_BULKY_DIMENSION_CM;
+    volume < MAX_NOT_BULKY_PACKAGE_VOLUME_CM2 &&
+    width < MAX_NOT_BULKY_DIMENSION_CM &&
+    height < MAX_NOT_BULKY_DIMENSION_CM &&
+    length < MAX_NOT_BULKY_DIMENSION_CM;
 
   if (isHeavy) {
     if (isNotBulky) {
